@@ -19,7 +19,7 @@ Kursus ini saat ini sedang dalam pengembangan dengan pelajaran berikut:
 
 #### **Pelajaran yang Tersedia**
 - Hari 1: Membangun dan Menyebarkan Website Memecoin dengan AI
-- Hari 2: Menyelesaikan Website Memecoin, Branding, dan Mengatur Branding Media Sosial dengan AI *(dapat berubah dan diperbarui)*
+- Hari 2: Menyelesaikan Website Memecoin, Branding, dan Mengatur Branding Media Sosial dengan AI
 
 #### **Segera Hadir**
 Pelajaran tambahan akan diposting saat bootcamp berlanjut, mencakup pengembangan Web3 lanjutan, protokol DeFi, koleksi NFT, dan lainnya.

@@ -19,7 +19,7 @@ The course is currently in development with the following lessons available:
 
 #### **Available Lessons**
 - Day 1: Building and Deploying Your Memecoin Website with AI
-- Day 2: Building Your Memecoin Community with AI *(subject to change and updates)*
+- Day 2: Finalizing Your Memecoin Website, Branding, and Setting Up Social Branding with AI
 
 #### **Coming Soon**
 Additional lessons will be posted as the bootcamp proceeds, covering advanced Web3 development, DeFi protocols, NFT collections, and more.

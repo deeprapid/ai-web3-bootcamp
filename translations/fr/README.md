@@ -19,7 +19,7 @@ Ce cours est actuellement en développement et propose les leçons suivantes :
 
 #### **Leçons disponibles**
 - Jour 1 : Construction et déploiement d'un site web de memecoin avec l'IA
-- Jour 2 : Finalisation du site web de memecoin, branding et configuration du branding des médias sociaux avec l'IA *(sujet à modification/mise à jour)*
+- Jour 2 : Finalisation du site web de memecoin, branding et configuration du branding des médias sociaux avec l'IA
 
 #### **Prochainement**
 Au fur et à mesure que le bootcamp progresse, des leçons supplémentaires couvrant le développement Web3 avancé, les protocoles DeFi, les collections NFT et plus encore seront publiées.

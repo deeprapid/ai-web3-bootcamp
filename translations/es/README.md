@@ -19,7 +19,7 @@ Este curso está actualmente en desarrollo con las siguientes lecciones:
 
 #### **Lecciones Disponibles**
 - Día 1: Construyendo y Desplegando tu Sitio Web de Memecoin con IA
-- Día 2: Finalizando tu Sitio Web de Memecoin, Branding y Configurando Branding Social con IA *(sujeto a cambios y actualizaciones)*
+- Día 2: Finalizando tu Sitio Web de Memecoin, Branding y Configurando Branding Social con IA
 
 #### **Próximamente**
 Lecciones adicionales se publicarán a medida que el bootcamp progrese, cubriendo desarrollo Web3 avanzado, protocolos DeFi, colecciones NFT y más.

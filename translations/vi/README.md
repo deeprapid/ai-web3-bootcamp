@@ -19,7 +19,7 @@ Khóa học này hiện đang trong quá trình phát triển với các bài h�
 
 #### **Bài học có sẵn**
 - Ngày 1: Xây dựng và triển khai website Memecoin với AI
-- Ngày 2: Hoàn thiện website Memecoin, xây dựng thương hiệu và thiết lập thương hiệu mạng xã hội với AI *(có thể thay đổi và cập nhật)*
+- Ngày 2: Hoàn thiện website Memecoin, xây dựng thương hiệu và thiết lập thương hiệu mạng xã hội với AI
 
 #### **Sắp ra mắt**
 Các bài học bổ sung sẽ được đăng khi bootcamp tiến hành, bao gồm phát triển Web3 nâng cao, giao thức DeFi, bộ sưu tập NFT và nhiều hơn nữa.

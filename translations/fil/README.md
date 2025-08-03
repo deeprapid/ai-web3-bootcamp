@@ -19,7 +19,7 @@ Ang kursong ito ay kasalukuyang nasa development na may mga sumusunod na lessons
 
 #### **Available Lessons**
 - Araw 1: Pagbuo at Pag-deploy ng Iyong Memecoin Website gamit ang AI
-- Araw 2: Pagtatapos ng Iyong Memecoin Website, Branding, at Pag-setup ng Social Branding gamit ang AI *(maaaring magbago at ma-update)*
+- Araw 2: Pagtatapos ng Iyong Memecoin Website, Branding, at Pag-setup ng Social Branding gamit ang AI
 
 #### **Coming Soon**
 Mga karagdagang lessons ay ipo-post habang nagpapatuloy ang bootcamp, na sumasaklaw sa advanced Web3 development, DeFi protocols, NFT collections, at iba pa.

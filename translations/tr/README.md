@@ -19,7 +19,7 @@ Bu kurs şu anda geliştirme aşamasında olup aşağıdaki dersleri içerir:
 
 #### **Mevcut Dersler**
 - 1. Gün: AI ile Memecoin Web Sitenizi Oluşturma ve Dağıtma
-- 2. Gün: Memecoin Web Sitenizi Tamamlama, Marka Oluşturma ve AI ile Sosyal Marka Kurulumu *(değişebilir ve güncellenebilir)*
+- 2. Gün: Memecoin Web Sitenizi Tamamlama, Marka Oluşturma ve AI ile Sosyal Marka Kurulumu
 
 #### **Yakında**
 Bootcamp ilerledikçe gelişmiş Web3 geliştirme, DeFi protokolleri, NFT koleksiyonları ve daha fazlasını kapsayan ek dersler yayınlanacak.
