@@ -128,6 +128,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 DeepRapid University represents a new paradigm in learning—where AI enhances every aspect of the educational experience, ensuring higher quality, faster results, and global accessibility.
 
 **Built with ❤️ and 🤖 by the DeepRapid team**
-
-
-**Ready to start your AI in Web3 journey? Begin with [Day 1](day-01.md) and build the future of decentralized applications!** 
