@@ -75,6 +75,11 @@ phase2:
       priority: 10
       market_size: "Large"
       quality_required: 85
+    - code: "vi"
+      name: "Vietnamese"
+      priority: 11
+      market_size: "Growing"
+      quality_required: 90
   max_concurrent: 3
   quality_gate: 90
 ```

@@ -62,7 +62,7 @@
 4. **เคล็ดลับ:** Recursive prompting ประหยัดเวลา; chain 2-3 iterations สำหรับผลลัพธ์ที่ดีที่สุด (เช่น สร้าง prompt > ปรับปรุงด้วย feedback > ใช้งานสุดท้าย)
 
 ### งาน 2: ระดมความคิด Memecoin Ideas โดยใช้ Grok 4 ด้วย Recursive Prompting
-**เป้าหมาย:** ใช้ Grok 4 สำหรับการวิจัยเบื้องต้นและการระดมความคิด 10 memecoin ideas ที่ไวรัลตามแนวคิดส่วนตัวที่คุณระบุ (เช่น "a memecoin about my Shiba Inu dog named Kylie") เน้นความไวรัลโดยการสร้างเรื่องราวที่แข็งแกร่งรอบชุมชน มีม และเทรนด์ ใช้ recursive prompting เพื่อปรับปรุงและเลือกแนวคิด (ชื่อโทเคน, สัญลักษณ์, เรื่องราว) ส่งผลให้ได้ prompt ที่จะวางใน Cursor เข้าใจ "meta" vs. แนวคิดอื่นๆ
+**เป้าหมาย:** ใช้ Grok 4 สำหรับการวิจัยเบื้องต้นและการระดมความคิด 10 memecoin ideas ที่ไวรัลตามแนวคิดส่วนตัวที่คุณระบุ (เช่น "memecoin เกี่ยวกับสุนัข Shiba Inu ของฉันชื่อ Kylie") เน้นความไวรัลโดยการสร้างเรื่องราวที่แข็งแกร่งรอบชุมชน มีม และเทรนด์ ใช้ recursive prompting เพื่อปรับปรุงและเลือกแนวคิด (ชื่อโทเคน, สัญลักษณ์, เรื่องราว) ส่งผลให้ได้ prompt ที่จะวางใน Cursor เข้าใจ "meta" vs. แนวคิดอื่นๆ
 
 1. **เข้าใจ "Meta" vs. แนวคิด Memecoin อื่นๆ:**
    - **Meta Memecoins:** สิ่งเหล่านี้สะท้อนสิ่งที่ไวรัลหรือเป็นที่นิยมในตอนนี้ แตะต้องหัวข้อที่กำลังเป็นเทรนด์บน X, TikTok, การเมือง หรือวัฒนธรรม crypto (เช่น เหรียญเกี่ยวกับ memecoins, เทรนด์ปัจจุบัน หรือการเสียดสีเช่น "CoinAboutCoins") พวกเขาไวรัลผ่านอารมณ์ขัน การอ้างอิงที่ทันเวลา (เช่น มีมการเลือกตั้ง 2025) และมุขในแพลตฟอร์มเฉพาะ แพร่กระจายอย่างรวดเร็วบนโซเชียลมีเดีย ตัวอย่าง: PEPE (frog meme meta) ใช้ประโยชน์จากเทรนด์วัฒนธรรม
@@ -77,7 +77,7 @@
    - ใช้ข้อมูลเชิงลึกเพื่อแจ้งการระดมความคิดของคุณ (เช่น meta coins เช่น PEPE เจริญเติบโตบนเทรนด์; เหรียญหมาเช่น DOGE บนการสนับสนุน)
 
 4. **เริ่มต้นด้วยแนวคิดของคุณ:**
-   - ตัดสินใจเกี่ยวกับเทมส่วนตัว (เช่น "memecoin about my Shiba Inu dog named Kylie" หรือ "memecoin about AI engineers")
+   - ตัดสินใจเกี่ยวกับเทมส่วนตัว (เช่น "memecoin เกี่ยวกับสุนัข Shiba Inu ของฉันชื่อ Kylie" หรือ "memecoin เกี่ยวกับวิศวกร AI")
    - ใช้ recursive prompting ใน Grok 4: "สร้าง prompt ที่ปรับปรุงแล้วสำหรับการระดมความคิด 10 แนวคิด memecoin ที่ไวรัลตาม: [your idea] เน้นความไวรัลผ่านเรื่องราวที่แข็งแกร่ง ศักยภาพมีม การมีส่วนร่วมของชุมชน และเทรนด์ปัจจุบันบน X หรือ TikTok รวมชื่อโทเคน สัญลักษณ์ และเรื่องราวสำหรับแต่ละแนวคิด ไฮไลท์ว่าเป็น 'meta' หรือสัตว์ ฟอร์แมตผลลัพธ์เป็น prompt เดียวเพื่อวางใน Cursor สำหรับการสร้างเว็บไซต์"
 
 5. **ระดมความคิดด้วย Grok 4:**
@@ -85,7 +85,7 @@
    - Grok จะส่งออก 10 ideas เช่น:
      - Idea 1 (Animal-Themed): Token Name: KylieShib, Symbol: KYL, Narrative: "KylieShib เป็นเหรียญสุดยอดสำหรับคนรัก Shiba! ได้แรงบันดาลใจจาก Kylie ที่ภักดีของคุณ memecoin นี้เฉลิมฉลองการผจญภัยนุ่มนิ่มและ airdrops ที่เชื่อมโยงกับเทรนด์ #DogTok เข้าร่วมการแข่งขันมีม—ไวรัลด้วยวิดีโอลูกสุนัขน่ารัก!"
             - Idea 2 (Meta): Token Name: KylieMeta, Symbol: KMT, Narrative: "KylieMeta ประชด hype crypto ปี 2025! Kylie สุนัข Shiba 'meta-dog' ประชด TikTok pump-and-dumps ด้วยความประชด เรื่องราว: เหรียญที่เป็นเทรนด์กับ #SolanaSzn—ไวรัลผ่านการประชด X!"
-   - ตรวจสอบ ideas เปรียบเทียบ meta (trending, sustainable hype) vs. animal (cute, quick virality but risk of fad)
+   - ตรวจสอบ ideas เปรียบเทียบ meta (trending, sustainable hype) vs. animal (น่ารัก, ไวรัลเร็วแต่เสี่ยงต่อแฟชั่น)
 
 6. **ปรับปรุงการเลือกแบบ Recursive:**
    - หากจำเป็น prompt Grok 4: "ปรับปรุงแนวคิด memecoin 3 อันดับแรกของฉันจากรายการเพื่อเพิ่มความไวรัลสูงสุด: เสริมเรื่องราวด้วยเทรนด์ X/TikTok ปัจจุบัน เทมเพลตมีม และการรวม LetsBonk อธิบายเหตุผลที่แนวคิด meta อาจทำได้ดีกว่าสัตว์ในปี 2025"
@@ -95,7 +95,7 @@
    - ถาม Cursor Chat: "ช่วยฉันเลือกแนวคิด memecoin ที่ไวรัลที่สุดจากรายการระดมความคิดของ Grok 4 โดยเน้นความแข็งแกร่งของเรื่องราวและการแลกเปลี่ยนระหว่าง meta กับสัตว์"
 
 ### งาน 3: สร้างแบนเนอร์ X, แบนเนอร์ DEX และโลโก้โดยใช้ AI (Grok 4 และ ChatGPT)
-**เป้าหมาย:** สร้างแบนเนอร์ X แบนเนอร์ DEX เดียวสำหรับทั้ง DexScreener และ DexTools และโลโก้ที่เน้นมาสคอตสำหรับเว็บไซต์ memecoin ของคุณโดยใช้ Grok 4 และ ChatGPT ใช้ recursive prompting ใน Grok 4 เพื่อปรับปรุง prompts และเก็บรูปภาพในเครื่องจนกว่าจะถึงการเผยแพร่ หมายเหตุว่ารูปภาพอาจต้องแก้ไขใน Photoshop หรือทางเลือกฟรี
+**เป้าหมาย:** สร้างแบนเนอร์ X แบนเนอร์ DEX เดียวสำหรับทั้ง DexScreener และ DexTools และโลโก้ที่เน้นมาสคอตโดยใช้ Grok 4 และ ChatGPT ด้วย recursive prompting สำหรับการปรับปรุง แก้ไขใน Photoshop/GIMP และเก็บในเครื่อง
 
 1. **เลือกเครื่องมือ AI ของคุณ:**
    - **Grok 4:** ใช้ [grok.com](https://grok.com/) หรือ X app สำหรับการปรับปรุง prompt เบื้องต้นและการสร้างภาพ (ผ่าน Aurora หรือคล้ายกันใน Grok 4)
@@ -111,7 +111,7 @@
 
 4. **สร้างแบนเนอร์ X:**
    - Prompt ที่ปรับปรุง (ใช้ Grok 4 เพื่อปรับปรุง): "สร้างรูปภาพแบนเนอร์สำหรับโปรไฟล์ X (Twitter) ของ '[your token name]' เน้นมาสคอต tagline ตาม [your narrative] และองค์ประกอบเช่น [theme, e.g., หมาในอวกาศ] ความละเอียดสูง 1500x500 pixels รูปแบบ PNG"
-   - ใช้ Grok 4 แล้วปรับปรุงใน ChatGPT หากจำเป็น: "Design an X banner for 'KylieShib' with a Shiba dog mascot, 'Loyal to the Moon' tagline, and space theme, 1500x500 pixels, PNG."
+   - ใช้ Grok 4 แล้วปรับปรุงใน ChatGPT หากจำเป็น: "ออกแบบแบนเนอร์ X สำหรับ 'KylieShib' พร้อมมาสคอตสุนัข Shiba คำขวัญ 'Loyal to the Moon' และธีมอวกาศ 1500x500 pixels, PNG"
    - ดาวน์โหลดเป็น `x-banner.png`
 
 5. **สร้างแบนเนอร์ DEX (สำหรับ DexScreener และ DexTools):**
@@ -154,13 +154,13 @@
 4. **วาง Prompt ที่ปรับปรุงแล้วลงใน Cursor Composer:**
    - วาง prompt ที่ปรับปรุงแล้วจาก Cursor Chat (แทนที่ด้วย local image paths เช่น `assets/logo.png` และแนวคิดที่เลือกของคุณ; อัปเดตเป็น GitHub URLs ในการเผยแพร่):
      ```
-     Generate a single static HTML page (index.html) for a memecoin called "[your token name]" with all HTML, CSS (in <style> tags), and JavaScript (in <script> tags). Include:
-     - A bold hero section with coin name, tagline based on [your narrative], mascot logo image (use this URL: assets/logo.png), and a placeholder buy button for Raydium (href='https://raydium.io/swap/?inputMint=sol&outputMint=[your-token-mint]').
-     - A vibrant tokenomics section with a table (e.g., total supply: 1B tokens, distribution: 50% community, 30% dev, 20% marketing).
+     สร้างหน้า HTML แบบ static เดียว (index.html) สำหรับ memecoin ชื่อ "[your token name]" พร้อม HTML, CSS (ใน <style> tags) และ JavaScript (ใน <script> tags) ทั้งหมด รวมถึง:
+     - ส่วน hero ที่กล้าหาญพร้อมชื่อเหรียญ คำขวัญตาม [your narrative] รูปโลโก้มาสคอต (ใช้ URL นี้: assets/logo.png) และปุ่มซื้อ placeholder สำหรับ Raydium (href='https://raydium.io/swap/?inputMint=sol&outputMint=[your-token-mint]')
+     - ส่วน tokenomics ที่สดใสพร้อมตาราง (เช่น total supply: 1B tokens, distribution: 50% community, 30% dev, 20% marketing)
      - ส่วน roadmap แบบโต้ตอบพร้อมไทม์ไลน์ (เช่น Q1 2025: เปิดตัวบน LetsBonk, Q2: การขึ้นทะเบียนในตลาด)
-     - A clear how-to-buy guide with steps (e.g., "Get Phantom Wallet, Buy SOL, Swap on LetsBonk.fun").
-     - A community section with placeholder links to X (href='https://x.com/[yourhandle]'), TG (href='https://t.me/[yourchannel]'), and DexScreener (href='https://dexscreener.com/solana/[token-mint]').
-     - A responsive meme gallery with 4 placeholder images in a grid (use URLs like https://via.placeholder.com/300x300).
+     - คู่มือการซื้อที่ชัดเจนพร้อมขั้นตอน (เช่น "Get Phantom Wallet, Buy SOL, Swap on LetsBonk.fun")
+     - ส่วนชุมชนพร้อมลิงก์ placeholder ไปยัง X (href='https://x.com/[yourhandle]'), TG (href='https://t.me/[yourchannel]') และ DexScreener (href='https://dexscreener.com/solana/[token-mint]')
+     - แกลเลอรี่มีมที่ตอบสนองพร้อมรูปภาพ placeholder 4 รูปในกริด (ใช้ URLs เช่น https://via.placeholder.com/300x300)
      ใช้ semantic HTML การออกแบบที่ตอบสนอง (เหมาะกับมือถือ) และสุนทรียศาสตร์ที่สนุกโดยใช้ประโยชน์จากจานสีจากรูปภาพของฉัน (เช่น primary: #FF0000, secondary: #FFFFFF) ได้รับแรงบันดาลใจจากการออกแบบ memecoin Solana ชั้นนำ ให้แน่ใจว่าโค้ดทั้งหมดอยู่ในไฟล์ index.html เดียว
      ```
    - Cursor จะสร้าง `index.html` ในโฟลเดอร์ `memecoin-site-day1` ของคุณพร้อม embedded `<style>` และ `<script>` sections ใช้สีจากรูปภาพและแรงบันดาลใจการออกแบบ บันทึกมัน

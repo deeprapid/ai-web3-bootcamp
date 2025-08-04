@@ -152,7 +152,104 @@ for course_dir in courses/*/; do
 done
 
 echo ""
-echo "6. Checking .cursorrules compliance..."
+echo "6. Checking translation quality..."
+echo "--------------------------------"
+
+# Function to check for English content in translated files
+check_translation_quality() {
+    local file="$1"
+    local language="$2"
+    local issues_found=0
+    
+    # Skip English files
+    if [[ "$language" == "en" ]]; then
+        return 0
+    fi
+    
+    # Common technical terms and brand names that should remain in English
+    local exclude_patterns=(
+        "Grok 4" "ChatGPT" "Cursor IDE" "GitHub" "HTML" "CSS" "JavaScript" 
+        "Node.js" "Git" "Telegram" "X" "Twitter" "Buffer" "LetsBonk.fun"
+        "DexScreener" "DexTools" "Raydium" "Solana" "DeFi" "NFT" "AI"
+        "Premium+" "SuperGrok" "DALL-E" "VS Code" "Composer" "Chat"
+        "Phantom Wallet" "SOL" "Q1" "Q2" "Q3" "Q4" "LFG" "CA"
+    )
+    
+    # Create a temporary file with excluded patterns
+    local temp_file=$(mktemp)
+    cp "$file" "$temp_file"
+    
+    # Remove legitimate technical terms from consideration
+    for pattern in "${exclude_patterns[@]}"; do
+        sed -i '' "s/$pattern/__EXCLUDED__/g" "$temp_file"
+    done
+    
+    # Check for long English sentences (6+ words) after exclusions
+    local long_sentences=$(grep -o "[A-Z][a-z]\+ [a-z]\+ [a-z]\+ [a-z]\+ [a-z]\+ [a-z]\+" "$temp_file" 2>/dev/null | wc -l)
+    
+    # Check for medium English phrases (4-5 words) after exclusions
+    local medium_phrases=$(grep -o "[A-Z][a-z]\+ [a-z]\+ [a-z]\+ [a-z]\+" "$temp_file" 2>/dev/null | wc -l)
+    
+    # Check for code blocks with English content after exclusions
+    local code_blocks=$(grep -A 5 -B 5 "\`\`\`" "$temp_file" 2>/dev/null | grep -o "[A-Z][a-z]\+ [a-z]\+ [a-z]\+" | wc -l)
+    
+    # Clean up temp file
+    rm "$temp_file"
+    
+    # Calculate total issues
+    issues_found=$((long_sentences + medium_phrases + code_blocks))
+    
+    if [ $issues_found -eq 0 ]; then
+        print_result 0 "No English content found in $(basename "$file")"
+    else
+        print_warning "Found $issues_found potential English content issues in $(basename "$file")"
+        # Show examples of issues found
+        if [ $long_sentences -gt 0 ]; then
+            echo "  - Long English sentences: $long_sentences"
+        fi
+        if [ $medium_phrases -gt 0 ]; then
+            echo "  - Medium English phrases: $medium_phrases"
+        fi
+        if [ $code_blocks -gt 0 ]; then
+            echo "  - English content in code blocks: $code_blocks"
+        fi
+    fi
+    
+    return $issues_found
+}
+
+# Check all translated files
+total_translation_issues=0
+for course_dir in courses/*/; do
+    if [ -d "$course_dir" ]; then
+        course_name=$(basename "$course_dir")
+        
+        # Check each language directory
+        for lang_dir in "$course_dir"*/; do
+            if [ -d "$lang_dir" ]; then
+                lang_name=$(basename "$lang_dir")
+                
+                # Check all .md files in this language directory
+                for file in "$lang_dir"*.md; do
+                    if [ -f "$file" ]; then
+                        check_translation_quality "$file" "$lang_name"
+                        issues=$?
+                        total_translation_issues=$((total_translation_issues + issues))
+                    fi
+                done
+            fi
+        done
+    fi
+done
+
+if [ $total_translation_issues -eq 0 ]; then
+    print_result 0 "All translations pass quality checks"
+else
+    print_warning "Found $total_translation_issues translation quality issues across all files"
+fi
+
+echo ""
+echo "7. Checking .cursorrules compliance..."
 echo "------------------------------------"
 
 # Check if .cursorrules exists and has required content
