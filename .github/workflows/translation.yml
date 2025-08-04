@@ -31,14 +31,14 @@ jobs:
             echo "📝 No translation trigger found"
           fi
           
-                        - name: Setup translation environment
-                    if: steps.translation-check.outputs.translation_needed == 'true'
-                    run: |
-                      echo "=== Setting up Translation Environment ==="
-                      chmod +x scripts/translate.sh
-                      chmod +x scripts/update-status.sh
-                      chmod +x scripts/cleanup.sh
-                      echo "✅ Translation scripts made executable"
+      - name: Setup translation environment
+        if: steps.translation-check.outputs.translation_needed == 'true'
+        run: |
+          echo "=== Setting up Translation Environment ==="
+          chmod +x scripts/translate.sh
+          chmod +x scripts/update-status.sh
+          chmod +x scripts/cleanup.sh
+          echo "✅ Translation scripts made executable"
           
       - name: Run translation pipeline
         if: steps.translation-check.outputs.translation_needed == 'true'

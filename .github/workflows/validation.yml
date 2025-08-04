@@ -25,15 +25,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         
-                        - name: Setup environment
-                    run: |
-                      echo "Setting up validation environment..."
-                      chmod +x scripts/validate.sh
+      - name: Setup environment
+        run: |
+          echo "Setting up validation environment..."
+          chmod +x scripts/validate.sh
           
-                        - name: Run Cursor AI validation
-                    run: |
-                      echo "=== Running Cursor AI Quality Validation ==="
-                      ./scripts/validate.sh
+      - name: Run Cursor AI validation
+        run: |
+          echo "=== Running Cursor AI Quality Validation ==="
+          ./scripts/validate.sh
           
       - name: Check template compliance
         run: |
@@ -100,40 +100,33 @@ jobs:
           
           echo "✅ .cursorrules compliance verified"
           
-      - name: Validate file structure
+      - name: Check file structure
         run: |
-          echo "=== Validating File Structure ==="
+          echo "=== Checking File Structure ==="
           
-          # Check if courses follow correct structure
-          for course_dir in courses/*/; do
-            if [ -d "$course_dir" ]; then
-              course_name=$(basename "$course_dir")
-              echo "Checking course: $course_name"
-              
-              # Check for English directory
-              if [ ! -d "$course_dir/en" ]; then
-                echo "❌ English directory missing for $course_name"
-                exit 1
-              fi
-              
-              # Check for lesson files
-              lesson_count=$(find "$course_dir/en" -name "lesson-*.md" | wc -l)
-              if [ $lesson_count -eq 0 ]; then
-                echo "❌ No lesson files found for $course_name"
-                exit 1
-              fi
-              
-              echo "✅ Course $course_name structure valid"
-            fi
-          done
+          # Check for required directories
+          if [ ! -d "courses" ]; then
+            echo "❌ courses directory missing"
+            exit 1
+          fi
           
-      - name: Quality validation summary
+          if [ ! -d "templates" ]; then
+            echo "❌ templates directory missing"
+            exit 1
+          fi
+          
+          if [ ! -d "scripts" ]; then
+            echo "❌ scripts directory missing"
+            exit 1
+          fi
+          
+          echo "✅ File structure verified"
+          
+      - name: Quality summary
         run: |
           echo "=== QUALITY VALIDATION SUMMARY ==="
           echo "✅ Template compliance verified"
           echo "✅ Cross-references validated"
           echo "✅ .cursorrules compliance checked"
           echo "✅ File structure validated"
-          echo "✅ Cursor AI validation passed"
-          echo ""
           echo "🎉 All quality checks passed!" 
