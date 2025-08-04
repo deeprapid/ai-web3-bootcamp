@@ -129,4 +129,44 @@ DeepRapid University represents a new paradigm in learning—where AI enhances e
 
 **Built with ❤️ and 🤖 by the DeepRapid team**
 
+<<<<<<< HEAD
 *Empowering the next generation through AI-powered education.* 
+=======
+- **[Day 2: Finalizing Your Memecoin Website, Branding, and Setting Up Social Branding with AI](day-02.md)**
+  - Research 2025 memecoin branding trends using Grok 4
+  - Refine logos, X banners, and DEX banners with AI
+  - Create comprehensive style guides with meme guidelines
+  - Update website with refined branding and animations
+  - Set up branded X and Telegram profiles with AI-generated content
+  - Generate initial social content using Buffer for scheduling
+  - Learn about branding consistency and meme culture for virality
+
+### Coming Soon
+Additional lessons will be posted as the bootcamp proceeds, covering advanced Web3 development, DeFi protocols, NFT collections, and more. The next lessons will focus on community building, Telegram bot integration, and advanced social media strategies.
+
+---
+
+## Resources
+
+### Tools & Platforms
+- [Cursor IDE](https://cursor.com/) - AI-powered code editor
+- [Grok 4](https://grok.com/) - Advanced AI research and content generation
+- [ChatGPT](https://chat.openai.com/) - AI assistant for various tasks
+- [Buffer](https://buffer.com/) - Social media scheduling and management
+- [LetsBonk.fun](https://letsbonk.fun/) - Solana memecoin launchpad
+- [DexScreener](https://dexscreener.com/) - DEX analytics and token tracking
+- [Solana](https://solana.com/) - High-performance blockchain platform
+
+### Learning Resources
+- [Solana Documentation](https://docs.solana.com/)
+- [Cursor IDE](https://cursor.com/) - AI-powered code editor
+- [Grok 4](https://grok.com/) - Advanced AI research and content generation
+
+---
+
+
+
+---
+
+**Ready to start your AI in Web3 journey? Begin with [Day 1](day-01.md) and build the future of decentralized applications!** 
+>>>>>>> origin/main
