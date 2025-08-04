@@ -131,4 +131,3 @@ DeepRapid University represents a new paradigm in learning—where AI enhances e
 
 
 **Ready to start your AI in Web3 journey? Begin with [Day 1](day-01.md) and build the future of decentralized applications!** 
->>>>>>> origin/main
