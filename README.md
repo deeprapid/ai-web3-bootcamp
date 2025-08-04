@@ -1,4 +1,4 @@
-# AI in Web3 Bootcamp: 14-Day Course
+# AI in Web3 Bootcamp
 
 ## Course Overview
 
