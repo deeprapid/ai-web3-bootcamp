@@ -1,0 +1,74 @@
+# DeepRapid University Repository Rules
+
+## Repository Context
+- This is an AI-powered educational platform for AI and crypto education
+- Content follows templates in `templates/` directory
+- Quality validation uses `templates/quality-template.md` (Unified Quality System)
+- Translation process uses `templates/translation-template.md`
+- Course structure uses `templates/course-template.md`
+
+## Template System Requirements
+- **ALWAYS** reference related templates when making changes
+- **ALWAYS** follow the unified quality system
+- **ALWAYS** use templates for content creation and validation
+- **NEVER** create content without following template structure
+
+## Code Quality Standards
+- Follow the unified quality system defined in `templates/quality-template.md`
+- Use templates for all content creation and validation
+- Maintain cross-references between templates
+- Validate against quality template standards before committing
+
+## AI-Assisted Tasks
+- **Content Creation**: Follow `templates/course-template.md` structure
+- **Translations**: Follow `templates/translation-template.md` process
+- **Quality Checks**: Use `templates/quality-template.md` standards
+- **Template Updates**: Always reference related templates when making changes
+
+## File Structure Requirements
+- Courses go in `courses/[course-name]/[language]/`
+- Templates are in `templates/`
+- Documentation in `docs/`
+- Status tracking in `STATUS.md`
+- Scripts in `scripts/`
+
+## Quality Validation Process
+1. **Structural Validation**: Check against course template structure
+2. **Quality Validation**: Use quality template standards
+3. **Cross-Reference Check**: Ensure template relationships are maintained
+4. **Template Compliance**: Verify all content follows template requirements
+
+## Template Cross-References
+- Course Template → References translation and quality templates
+- Translation Template → References course and quality templates  
+- Quality Template → References course and translation templates
+
+## Content Standards
+- **Educational Excellence**: Content must effectively teach concepts
+- **Technical Accuracy**: All technical information must be correct
+- **Template Compliance**: All content must follow template structure
+- **Quality Validation**: All content must pass quality template checks
+
+## AI Integration Guidelines
+- Use AI prompts section in lessons for AI assistance
+- Maintain technical term consistency across translations
+- Preserve educational value in all content
+- Follow iterative quality control processes
+
+## Repository Maintenance
+- Update `STATUS.md` when content changes
+- Maintain template cross-references
+- Follow unified quality system standards
+- Use quality template for all validation
+
+## CI/CD Pipeline Integration
+- Run quality validation scripts before deployment
+- Check template compliance in automated tests
+- Validate cross-references between templates
+- Ensure unified quality system adherence
+
+## Error Prevention
+- **NEVER** create content without following templates
+- **NEVER** skip quality validation steps
+- **NEVER** break template cross-references
+- **ALWAYS** reference related templates when making changes 

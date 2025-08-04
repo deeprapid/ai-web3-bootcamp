@@ -1,0 +1,132 @@
+name: Quality Validation
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'courses/**'
+      - 'templates/**'
+      - 'scripts/**'
+      - '.cursorrules'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'courses/**'
+      - 'templates/**'
+      - 'scripts/**'
+      - '.cursorrules'
+
+jobs:
+  quality-validation:
+    runs-on: ubuntu-latest
+    name: Validation
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup environment
+        run: |
+          echo "Setting up validation environment..."
+          chmod +x scripts/validate.sh
+          
+      - name: Run Cursor AI validation
+        run: |
+          echo "=== Running Cursor AI Quality Validation ==="
+          ./scripts/validate.sh
+          
+      - name: Check template compliance
+        run: |
+          echo "=== Checking Template Compliance ==="
+          
+          # Check if all required templates exist
+          if [ ! -f "templates/course-template.md" ]; then
+            echo "❌ Course template missing"
+            exit 1
+          fi
+          
+          if [ ! -f "templates/translation-template.md" ]; then
+            echo "❌ Translation template missing"
+            exit 1
+          fi
+          
+          if [ ! -f "templates/quality-template.md" ]; then
+            echo "❌ Quality template missing"
+            exit 1
+          fi
+          
+          echo "✅ All templates present"
+          
+      - name: Validate cross-references
+        run: |
+          echo "=== Validating Template Cross-References ==="
+          
+          # Check for cross-references in templates
+          if ! grep -q "Related Templates" templates/course-template.md; then
+            echo "❌ Course template missing cross-references"
+            exit 1
+          fi
+          
+          if ! grep -q "Related Templates" templates/translation-template.md; then
+            echo "❌ Translation template missing cross-references"
+            exit 1
+          fi
+          
+          if ! grep -q "Related Templates" templates/quality-template.md; then
+            echo "❌ Quality template missing cross-references"
+            exit 1
+          fi
+          
+          echo "✅ All templates have cross-references"
+          
+      - name: Check .cursorrules compliance
+        run: |
+          echo "=== Checking .cursorrules Compliance ==="
+          
+          if [ ! -f ".cursorrules" ]; then
+            echo "❌ .cursorrules file missing"
+            exit 1
+          fi
+          
+          if ! grep -q "Template System Requirements" .cursorrules; then
+            echo "❌ .cursorrules missing template system requirements"
+            exit 1
+          fi
+          
+          if ! grep -q "Unified Quality System" .cursorrules; then
+            echo "❌ .cursorrules missing unified quality system reference"
+            exit 1
+          fi
+          
+          echo "✅ .cursorrules compliance verified"
+          
+      - name: Check file structure
+        run: |
+          echo "=== Checking File Structure ==="
+          
+          # Check for required directories
+          if [ ! -d "courses" ]; then
+            echo "❌ courses directory missing"
+            exit 1
+          fi
+          
+          if [ ! -d "templates" ]; then
+            echo "❌ templates directory missing"
+            exit 1
+          fi
+          
+          if [ ! -d "scripts" ]; then
+            echo "❌ scripts directory missing"
+            exit 1
+          fi
+          
+          echo "✅ File structure verified"
+          
+      - name: Quality summary
+        run: |
+          echo "=== QUALITY VALIDATION SUMMARY ==="
+          echo "✅ Template compliance verified"
+          echo "✅ Cross-references validated"
+          echo "✅ .cursorrules compliance checked"
+          echo "✅ File structure validated"
+          echo "🎉 All quality checks passed!" 
