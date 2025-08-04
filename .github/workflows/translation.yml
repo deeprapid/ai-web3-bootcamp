@@ -1,0 +1,161 @@
+name: Translation Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'courses/**'
+      - 'scripts/**'
+      - 'TRANSLATIONS.md'
+      - 'STATUS.md'
+
+jobs:
+  translation-pipeline:
+    runs-on: ubuntu-latest
+    name: Translation
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Check for translation trigger
+        id: translation-check
+        run: |
+          if [[ "${{ github.event.head_commit.message }}" == *"[translate]"* ]]; then
+            echo "translation_needed=true" >> $GITHUB_OUTPUT
+            echo "🌐 Translation trigger detected"
+          else
+            echo "translation_needed=false" >> $GITHUB_OUTPUT
+            echo "📝 No translation trigger found"
+          fi
+          
+                        - name: Setup translation environment
+                    if: steps.translation-check.outputs.translation_needed == 'true'
+                    run: |
+                      echo "=== Setting up Translation Environment ==="
+                      chmod +x scripts/translate.sh
+                      chmod +x scripts/update-status.sh
+                      chmod +x scripts/cleanup.sh
+                      echo "✅ Translation scripts made executable"
+          
+      - name: Run translation pipeline
+        if: steps.translation-check.outputs.translation_needed == 'true'
+        run: |
+          echo "=== RUNNING TRANSLATION PIPELINE ==="
+          
+          # Extract languages from commit message
+          if [[ "${{ github.event.head_commit.message }}" == *"[translate:"* ]]; then
+            LANGUAGES=$(echo "${{ github.event.head_commit.message }}" | grep -o '\[translate:[^]]*\]' | sed 's/\[translate://' | sed 's/\]//')
+            echo "🎯 Target languages: $LANGUAGES"
+          else
+            # Default to all languages when just [translate] is used
+            LANGUAGES="all"
+            echo "🎯 Using all languages: $LANGUAGES"
+          fi
+          
+          # Handle multiple languages or phases
+          if [[ "$LANGUAGES" == "phase1" ]]; then
+            echo "🚀 Starting Phase 1 translation..."
+            ./scripts/translate.sh ai-for-web3 phase1 quality
+          elif [[ "$LANGUAGES" == "phase2" ]]; then
+            echo "🚀 Starting Phase 2 translation..."
+            ./scripts/translate.sh ai-for-web3 phase2 quality
+          elif [[ "$LANGUAGES" == "all" ]]; then
+            echo "🚀 Starting translation for all languages..."
+            ./scripts/translate.sh ai-for-web3 all quality
+          else
+            echo "🚀 Starting translation for languages: $LANGUAGES"
+            ./scripts/translate.sh ai-for-web3 "$LANGUAGES" quality
+          fi
+          
+          echo "✅ Translation pipeline completed"
+          
+      - name: Update translation status
+        if: steps.translation-check.outputs.translation_needed == 'true'
+        run: |
+          echo "=== UPDATING TRANSLATION STATUS ==="
+          
+          # Extract languages from commit message
+          if [[ "${{ github.event.head_commit.message }}" == *"[translate:"* ]]; then
+            LANGUAGES=$(echo "${{ github.event.head_commit.message }}" | grep -o '\[translate:[^]]*\]' | sed 's/\[translate://' | sed 's/\]//')
+          else
+            LANGUAGES="all"
+          fi
+          
+          # Determine phase based on languages
+          if [[ "$LANGUAGES" == "phase1" ]]; then
+            PHASE="phase1"
+          elif [[ "$LANGUAGES" == "phase2" ]]; then
+            PHASE="phase2"
+          elif [[ "$LANGUAGES" == "all" ]]; then
+            PHASE="all"
+          else
+            # For specific languages, determine phase
+            if [[ "$LANGUAGES" == *"es"* ]] || [[ "$LANGUAGES" == *"zh"* ]] || [[ "$LANGUAGES" == *"ja"* ]] || [[ "$LANGUAGES" == *"ko"* ]]; then
+              PHASE="phase1"
+            else
+              PHASE="phase2"
+            fi
+          fi
+          
+          # Update STATUS.md with translation results
+          ./scripts/update-status.sh ai-for-web3 "$PHASE" "Completed" "$LANGUAGES"
+          
+          echo "✅ Translation status updated"
+          
+      - name: Pipeline cleanup and commit
+        if: steps.translation-check.outputs.translation_needed == 'true'
+        run: |
+          echo "=== PIPELINE CLEANUP ==="
+          
+          # Extract languages from commit message
+          if [[ "${{ github.event.head_commit.message }}" == *"[translate:"* ]]; then
+            LANGUAGES=$(echo "${{ github.event.head_commit.message }}" | grep -o '\[translate:[^]]*\]' | sed 's/\[translate://' | sed 's/\]//')
+          else
+            LANGUAGES="all"
+          fi
+          
+          # Determine phase for cleanup
+          if [[ "$LANGUAGES" == "phase1" ]]; then
+            PHASE="phase1"
+          elif [[ "$LANGUAGES" == "phase2" ]]; then
+            PHASE="phase2"
+          elif [[ "$LANGUAGES" == "all" ]]; then
+            PHASE="all"
+          else
+            # For specific languages, determine phase
+            if [[ "$LANGUAGES" == *"es"* ]] || [[ "$LANGUAGES" == *"zh"* ]] || [[ "$LANGUAGES" == *"ja"* ]] || [[ "$LANGUAGES" == *"ko"* ]]; then
+              PHASE="phase1"
+            else
+              PHASE="phase2"
+            fi
+          fi
+          
+          # Run pipeline cleanup
+          ./scripts/cleanup.sh ai-for-web3 "$PHASE" "Completed" "$LANGUAGES"
+          
+          echo "✅ Pipeline cleanup completed"
+          
+      - name: Translation summary
+        if: steps.translation-check.outputs.translation_needed == 'true'
+        run: |
+          echo "=== TRANSLATION SUMMARY ==="
+          echo "✅ Translation pipeline executed"
+          echo "✅ Status updated in STATUS.md"
+          echo "✅ Pipeline cleanup completed"
+          echo "✅ Changes committed to repository"
+          echo ""
+          echo "🎉 Translation workflow completed successfully!"
+          
+      - name: Skip translation (no trigger)
+        if: steps.translation-check.outputs.translation_needed == 'false'
+        run: |
+          echo "📝 No translation trigger found - skipping translation pipeline"
+          echo "💡 To trigger translation, include [translate] in commit message"
+          echo "💡 Examples:"
+          echo "   [translate]           # All languages"
+          echo "   [translate:es]        # Spanish only"
+          echo "   [translate:es,zh,ja]  # Multiple languages"
+          echo "   [translate:phase1]    # Phase 1 languages" 

@@ -1,0 +1,245 @@
+# DeepRapid University Documentation Project
+# Git ignore file for documentation and translation workflows
+
+# =============================================================================
+# SYSTEM FILES
+# =============================================================================
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+*.lnk
+desktop.ini
+
+# Linux
+*~
+
+# =============================================================================
+# EDITOR FILES
+# =============================================================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# Cursor
+.cursor/
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# =============================================================================
+# TEMPORARY FILES
+# =============================================================================
+
+# Translation temporary files
+*translation-temp*
+*prompt-temp*
+incremental-translation-prompts.md
+full-translation-prompts.md
+
+# Backup files
+*.backup
+*.bak
+*.tmp
+*.temp
+
+# Status backup files
+STATUS.md.backup
+STATUS.md.tmp
+
+# =============================================================================
+# LOG FILES
+# =============================================================================
+
+# Script logs
+*.log
+logs/
+log/
+
+# Translation logs
+translation-*.log
+validation-*.log
+
+# =============================================================================
+# CI/CD TEMPORARY FILES
+# =============================================================================
+
+# GitHub Actions
+.github/workflows/*.tmp
+.github/workflows/*.temp
+
+# Script temporary files
+scripts/*.tmp
+scripts/*.temp
+
+# =============================================================================
+# COURSE CONTENT TEMPORARY FILES
+# =============================================================================
+
+# Course temporary files
+courses/*/temp/
+courses/*/tmp/
+courses/*/*.tmp
+courses/*/*.temp
+
+# Translation drafts
+courses/*/draft/
+courses/*/drafts/
+
+# =============================================================================
+# TEMPLATE TEMPORARY FILES
+# =============================================================================
+
+# Template drafts
+templates/*.tmp
+templates/*.temp
+templates/draft/
+templates/drafts/
+
+# =============================================================================
+# DEVELOPMENT FILES
+# =============================================================================
+
+# Node.js (if any development tools are used)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+
+# Python (if any scripts use Python)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# =============================================================================
+# SECURITY
+# =============================================================================
+
+# API keys and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.key
+*.pem
+secrets/
+
+# =============================================================================
+# ARCHIVE FILES
+# =============================================================================
+
+# Compressed files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# =============================================================================
+# METADATA FILES
+# =============================================================================
+
+# Git metadata
+.git/
+.gitignore~
+
+# IDE metadata
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# =============================================================================
+# DOCUMENTATION BUILD FILES
+# =============================================================================
+
+# Documentation build artifacts
+docs/build/
+docs/_build/
+docs/.doctrees/
+docs/.cache/
+
+# =============================================================================
+# TRANSLATION WORKFLOW FILES
+# =============================================================================
+
+# Translation workflow temporary files
+translation-*.md
+validation-*.md
+pipeline-*.md
+
+# Quality check temporary files
+quality-*.md
+template-*.md
+
+# =============================================================================
+# COURSE GENERATION FILES
+# =============================================================================
+
+# Generated course content (if any)
+generated/
+output/
+dist/
+
+# =============================================================================
+# TEST FILES
+# =============================================================================
+
+# Test artifacts
+test-results/
+coverage/
+.nyc_output/
+.coverage
+*.lcov
+
+# =============================================================================
+# LOCAL CONFIGURATION
+# =============================================================================
+
+# Local configuration files
+config.local.*
+settings.local.*
+*.local
+
+# =============================================================================
+# BACKUP AND RECOVERY
+# =============================================================================
+
+# Backup directories
+backup/
+backups/
+*.backup/
+*.bak/
+
+# Recovery files
+*.recovery
+*.restore 
