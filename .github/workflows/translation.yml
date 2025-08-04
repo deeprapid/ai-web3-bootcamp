@@ -8,6 +8,13 @@ on:
       - 'scripts/**'
       - 'TRANSLATIONS.md'
       - 'STATUS.md'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'courses/**'
+      - 'scripts/**'
+      - 'TRANSLATIONS.md'
+      - 'STATUS.md'
 
 jobs:
   translation-pipeline:
@@ -23,7 +30,11 @@ jobs:
       - name: Check for translation trigger
         id: translation-check
         run: |
-          if [[ "${{ github.event.head_commit.message }}" == *"[translate]"* ]]; then
+          # Check PR title and commit messages for translation triggers
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          COMMIT_MESSAGE="${{ github.event.head_commit.message }}"
+          
+          if [[ "$PR_TITLE" == *"[translate]"* ]] || [[ "$COMMIT_MESSAGE" == *"[translate]"* ]]; then
             echo "translation_needed=true" >> $GITHUB_OUTPUT
             echo "🌐 Translation trigger detected"
           else
@@ -45,9 +56,17 @@ jobs:
         run: |
           echo "=== RUNNING TRANSLATION PIPELINE ==="
           
-          # Extract languages from commit message
-          if [[ "${{ github.event.head_commit.message }}" == *"[translate:"* ]]; then
-            LANGUAGES=$(echo "${{ github.event.head_commit.message }}" | grep -o '\[translate:[^]]*\]' | sed 's/\[translate://' | sed 's/\]//')
+          # Extract languages from PR title or commit message
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          COMMIT_MESSAGE="${{ github.event.head_commit.message }}"
+          
+          if [[ "$PR_TITLE" == *"[translate:"* ]] || [[ "$COMMIT_MESSAGE" == *"[translate:"* ]]; then
+            # Check PR title first, then commit message
+            if [[ "$PR_TITLE" == *"[translate:"* ]]; then
+              LANGUAGES=$(echo "$PR_TITLE" | grep -o '\[translate:[^]]*\]' | sed 's/\[translate://' | sed 's/\]//')
+            else
+              LANGUAGES=$(echo "$COMMIT_MESSAGE" | grep -o '\[translate:[^]]*\]' | sed 's/\[translate://' | sed 's/\]//')
+            fi
             echo "🎯 Target languages: $LANGUAGES"
           else
             # Default to all languages when just [translate] is used
