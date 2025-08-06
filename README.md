@@ -27,12 +27,14 @@ deeprapid-training/
 │       ├── en/                # English (source language)
 │       │   ├── README.md      # Course overview
 │       │   ├── lesson-01.md   # AI-powered lesson content
-│       │   └── lesson-02.md   # AI-powered lesson content
+│       │   ├── lesson-02.md   # AI-powered lesson content
+│       │   └── lesson-03.md   # AI-powered lesson content
 │       └── th/                # Thai (complete translation)
 │           ├── README.md      # Course overview
 │           ├── lesson-01.md   # Translated lesson content
-│           └── lesson-02.md   # Translated lesson content
-├── templates/                   # Training-wide templates
+│           ├── lesson-02.md   # Translated lesson content
+│           └── lesson-03.md   # Translated lesson content
+├── templates/                   # University-wide templates
 │   ├── course-template.md      # Course and lesson structure template
 │   ├── translation-template.md # Translation guidelines and process
 │   ├── quality-template.md     # Unified quality standards
@@ -55,10 +57,11 @@ A comprehensive 14-day journey that demonstrates the power of AI in Web3 develop
 
 - **Lesson 1**: Building and Deploying Your Memecoin Website with AI
 - **Lesson 2**: Finalizing Your Memecoin Website, Branding, and Social Setup
-- **Coming Soon**: 12 additional lessons covering advanced Web3 development
+- **Lesson 3**: Roadmap Development & Brand Refinement
+- **Coming Soon**: 11 additional lessons covering advanced Web3 development
 
 **Available Languages:**
-- **English (en)**: Source language with 2 complete lessons
+- **English (en)**: Source language with 3 complete lessons
 - **Thai (th)**: Complete translation with high quality standards
 - **Additional Languages**: In development with quality control processes
 
@@ -128,3 +131,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 DeepRapid Training represents a new paradigm in learning—where AI enhances every aspect of the educational experience, ensuring higher quality, faster results, and global accessibility.
 
 **Built with ❤️ and 🤖 by the DeepRapid team**
+
+*Empowering the next generation through AI-powered education.*
