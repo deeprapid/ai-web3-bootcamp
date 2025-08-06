@@ -1,13 +1,13 @@
-# DeepRapid University 🚀
+# DeepRapid Training 🚀
 
 > **The Source of Truth for AI-Powered Education**
 
-DeepRapid University represents a revolutionary approach to education, built from the ground up to leverage artificial intelligence at every level. This repository serves as the **source of truth** for all educational content, course materials, and learning experiences that define the future of AI and crypto education.
+DeepRapid Training represents a revolutionary approach to education, built from the ground up to leverage artificial intelligence at every level. This repository serves as the **source of truth** for all educational content, course materials, and learning experiences that define the future of AI and crypto education.
 
 ## 🌟 What Makes This Revolutionary
 
 ### **AI-First Education Architecture**
-DeepRapid University leverages artificial intelligence to:
+DeepRapid Training leverages artificial intelligence to:
 
 - **Automated Content Generation**: AI creates, refines, and optimizes educational materials
 - **Intelligent Translation**: Real-time translation across 13+ languages
@@ -18,7 +18,7 @@ DeepRapid University leverages artificial intelligence to:
 ## 📚 Repository Structure
 
 ```
-deeprapid-university/
+deeprapid-training/
 ├── README.md                    # This file - overview and vision
 ├── STATUS.md                    # Repository status and progress tracking
 ├── TRANSLATIONS.md              # Translation configuration and strategy
@@ -74,10 +74,10 @@ A comprehensive 14-day journey that demonstrates the power of AI in Web3 develop
 ## 🔮 The Future of Education
 
 ### **AI-Enhanced Learning Experience**
-DeepRapid University represents the future of education where AI enhances every aspect of the learning experience, ensuring higher quality, faster results, and global accessibility.
+DeepRapid Training represents the future of education where AI enhances every aspect of the learning experience, ensuring higher quality, faster results, and global accessibility.
 
 ### **Coming Soon: Courseware Application**
-This repository serves as the foundation for an upcoming courseware application that will make DeepRapid University's content more easily consumable, featuring enhanced user experience, advanced analytics, and interactive features.
+This repository serves as the foundation for an upcoming courseware application that will make DeepRapid Training's content more easily consumable, featuring enhanced user experience, advanced analytics, and interactive features.
 
 ## 🚀 Getting Started
 
@@ -128,7 +128,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Ready to experience the future of education?**
 
-DeepRapid University represents a new paradigm in learning—where AI enhances every aspect of the educational experience, ensuring higher quality, faster results, and global accessibility.
+DeepRapid Training represents a new paradigm in learning—where AI enhances every aspect of the educational experience, ensuring higher quality, faster results, and global accessibility.
 
 **Built with ❤️ and 🤖 by the DeepRapid team**
 

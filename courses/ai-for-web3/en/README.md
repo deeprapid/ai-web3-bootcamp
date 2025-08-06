@@ -121,8 +121,4 @@ Additional lessons will be posted as the bootcamp proceeds, covering advanced We
 
 ---
 
-
-
----
-
 **Ready to start your AI in Web3 journey? Begin with [Lesson 1](lesson-01.md) and build the future of decentralized applications!** 
