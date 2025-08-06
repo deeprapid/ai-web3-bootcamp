@@ -20,6 +20,7 @@ The course is currently in development with the following lessons available:
 #### **Available Lessons**
 - Lesson 1: Building and Deploying Your Memecoin Website with AI
 - Lesson 2: Finalizing Your Memecoin Website, Branding, and Setting Up Social Branding with AI
+- Lesson 3: Roadmap Development & Brand Refinement
 
 #### **Coming Soon**
 Additional lessons will be posted as the bootcamp proceeds, covering advanced Web3 development, DeFi protocols, NFT collections, and more.
@@ -86,6 +87,16 @@ This course emphasizes **practical application** over theory. Each day builds up
   - Set up branded X and Telegram profiles with AI-generated content
   - Generate initial social content using Buffer for scheduling
   - Learn about branding consistency and meme culture for virality
+
+- **[Lesson 3: Roadmap Development & Brand Refinement](lesson-03.md)**
+  - Master the Cursor queue system for efficient AI-powered development
+  - Understand the difference between meme coins and utility tokens
+  - Create comprehensive style guides for AI and human guidance
+  - Develop effective roadmaps for both meme coins and utility tokens
+  - Implement responsive design principles for mobile-first development
+  - Study successful memecoin sites to extract best practices
+  - Build community-focused projects with clear utility or emotional appeal
+  - Optimize workflow efficiency through proper Git practices and screen management
 
 ### Coming Soon
 Additional lessons will be posted as the bootcamp proceeds, covering advanced Web3 development, DeFi protocols, NFT collections, and more. The next lessons will focus on community building, Telegram bot integration, and advanced social media strategies.
